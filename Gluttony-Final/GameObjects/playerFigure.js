@@ -206,7 +206,6 @@ class PlayerFigure extends ImageObject {
             } else {
                 this.startAnimation(22, 22);
             }
-            console.log("wallcollision");
         } else if (this.velocityY === 0 && this.moveBy.left !== 0) {
             if (this.facingDirection === "right") {
                 this.startAnimation(28, 35);

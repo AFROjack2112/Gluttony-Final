@@ -2,6 +2,7 @@ import { canvas, canvasContext } from "./canvasLayer.js";
 import { PlayerFigure } from "../GameObjects/playerFigure.js";
 import { camera } from "../script.js";
 import { myRequest } from "../script.js";
+import { hungerBar } from "../script.js";
 
 
 //create variables used for the framerateControll
@@ -47,6 +48,7 @@ function gameLoop(timestamp) {
 
 
 //Clears the canvas in the currently viewed area and draws the background according to background positions
+//decrease Hungerbar every frame
 //After that we iterate through every gameObject first storing positions and updating them
 //then checking forcollisions and changing positions accordingly
 //finally right before drawing we are determining the current animation for the playerfigure
@@ -54,7 +56,7 @@ function updateGameLoop() {
 
     canvasContext.clearRect(camera.x, camera.y, canvas.width, canvas.height);
     canvasContext.drawImage(backgroundImage, camera.backgroundX, camera.backgroundY - backgroundImage.height + canvas.height, backgroundImage.width, backgroundImage.height);
-
+    hungerBar.getHungrier(0)
     for (let gameLoopState = 0; gameLoopState < 3; gameLoopState++) {
         for (let singleGameObject of gameObjects) {
             if (singleGameObject.active === true) {

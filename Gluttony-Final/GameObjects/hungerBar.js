@@ -32,18 +32,16 @@ class HungerBar extends GameObject {
     }
 
 
-    //decrease over time triggerd by a setInteravl in sript.js
+    //decrease over time triggerd once every frame in corelayer
     getHungrier = (increaseValue) => {
 
         this.getHungrierTick -= increaseValue
-        this.getHungrierTick += 0.4
+        this.getHungrierTick += 0.11
         if (this.getHungrierTick <= 0) this.getHungrierTick = 0
 
         if (this.getHungrierTick >= 100) {
             changeSound('starveSound')
-
             gameOver(true)
-            this.getHungrierTick = 0
         }
     }
 }

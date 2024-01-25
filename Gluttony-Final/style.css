@@ -54,7 +54,7 @@ body {
 }
 
 #startButton {
-  background-image: url("./images/startButton.png");
+  background-image: url("./images/startbutton.png");
   color: #151826;
 }
 
@@ -71,7 +71,7 @@ body {
 }
 
 #aboutButton {
-  background-image: url("./images/aboutButton.png");
+  background-image: url("./images/aboutbutton.png");
   color: #883737;
   margin-bottom: 6.5rem;
 }

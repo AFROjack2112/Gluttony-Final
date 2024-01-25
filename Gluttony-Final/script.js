@@ -330,7 +330,7 @@ let playerFigureObject = new PlayerFigure(
 	350,
 	64,
 	64,
-	"./images/BODY_Charlie_test2.png",
+	"./images/charliesprites.png",
 	4,
 	1
 );
@@ -377,8 +377,6 @@ function keyEventUp(eventInformation) {
 	}
 }
 
-//declare Interval variable which will handle the Interval of a the decreasing hungerbar
-let hungryInterval;
 
 //store all necessary html references
 let startScreen = document.getElementById("startScreen");
@@ -390,11 +388,8 @@ let aboutButton = document.getElementById("aboutButton");
 let restartButton = document.getElementById("restartButton");
 let returnButton = document.getElementById("returnButton");
 
-//initiate hungryInterval, disable display of startScreen and enable the Canvas, start the Game Audio and initiate the gameloop
+//Disable display of startScreen and enable the Canvas, start the Game Audio and initiate the gameloop
 function startGame() {
-	hungryInterval = setInterval(function () {
-		hungerBar.getHungrier(0);
-	}, 50);
 	startScreen.style.display = "none";
 	canvasScreen.style.display = "block";
 	changeSound("gameMusic");
@@ -403,7 +398,7 @@ function startGame() {
 
 //takes 2 parameters, if the player starves the gameoverscreen will be different than dying to a collision
 //if he reaches the final heavenly delight the victory screen is inserted instead
-//otherwise let the screen come in with a short delay, clear the hungerbarinterval and stop the gameloop from running by setting stopRequest true
+//otherwise let the screen come in with a short delay and stop the gameloop from running by setting stopRequest true
 
 function gameOver(starve, victory) {
 	if (victory) {
@@ -417,7 +412,6 @@ function gameOver(starve, victory) {
 	setTimeout(function () {
 		gameOverScreen.style.display = "flex";
 	}, 500);
-	clearInterval(hungryInterval);
 	myRequest.stopRequest = true;
 }
 
