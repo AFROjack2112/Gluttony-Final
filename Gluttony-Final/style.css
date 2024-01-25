@@ -1,0 +1,94 @@
+body {
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-image: url("./images/chalkboard.png");
+  background-size: cover;
+}
+
+#canvas,
+#startScreen,
+#gameOver {
+  background-color: #151826;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 888px;
+  height: 500px;
+  border: 15px solid #151826;
+  border-radius: 2rem;
+  background-size: cover
+}
+
+#startScreen,
+#gameOver {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#startScreen {
+  background-image: url('./images/startScreen.jpg');
+}
+
+#gameOver {
+  background-image: url('./images/gameOverScreenDodge.png');
+}
+
+#startButton,
+#aboutButton,
+#restartButton,
+#returnButton {
+  background-color: transparent;
+  border: none;
+  margin-top: 2rem;
+  display: flex;
+  position: relative;
+  font-size: x-large;
+  justify-content: center;
+  width: 200px;
+  height: 60px;
+  align-items: center;
+}
+
+#startButton {
+  background-image: url("./images/startButton.png");
+  color: #151826;
+}
+
+#returnButton {
+  background-image: url("./images/startbutton.png");
+  color: #151826;
+  margin-bottom: 1rem;
+}
+
+#startButton:hover,
+#returnButton:hover,
+#aboutButton:hover {
+  color: #b33737;
+}
+
+#aboutButton {
+  background-image: url("./images/aboutButton.png");
+  color: #883737;
+  margin-bottom: 6.5rem;
+}
+
+#restartButton {
+  background-image: url("./images/startbutton.png");
+  color: #151826;
+  margin-bottom: 12rem;
+}
+
+#restartButton:hover {
+  color: #b33737;
+}
+
+#backgroundImage,
+#canvas,
+#gameOver,
+#returnButton {
+  display: none;
+}
